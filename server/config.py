@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-PROJECT_ROOT = Path(__file__).resolve().parent[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA_DIR = PROJECT_ROOT / "data"
 MCP_SERVER_NAME = os.getenv("MCP_SERVER_NAME", "HR Leave MCP Server")
 MCP_HOST = os.getenv("MCP_HOST", "0.0.0.0")
