@@ -100,11 +100,11 @@ def init_database(seed_if_empty: bool=True) -> None:
             """
         )
 
-    if seed_if_empty:
-            employee_count = cursor.execute("SELECT COUNT(*) FROM employees").fetchone()[0]
-            if employee_count == 0:
-                seed_database(cursor)
-                LOGGER.info("Seeded HR database at %s", HR_DB_PATH)
+        if seed_if_empty:
+                employee_count = cursor.execute("SELECT COUNT(*) FROM employees").fetchone()[0]
+                if employee_count == 0:
+                    seed_database(cursor)
+                    LOGGER.info("Seeded HR database at %s", HR_DB_PATH)
 
 
 
