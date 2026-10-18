@@ -1,0 +1,50 @@
+[
+    {
+      "employee_id": "EMP001",
+      "name": "Aisha Mehta",
+      "email": "aisha.mehta@example.com",
+      "department": "Engineering",
+      "role": "Backend Engineer",
+      "leave_balance": 18
+    },
+    {
+      "employee_id": "EMP002",
+      "name": "Rahul Nair",
+      "email": "rahul.nair@example.com",
+      "department": "Engineering",
+      "role": "ML Engineer",
+      "leave_balance": 12
+    },
+    {
+      "employee_id": "EMP003",
+      "name": "Priya Shah",
+      "email": "priya.shah@example.com",
+      "department": "People Ops",
+      "role": "HR Business Partner",
+      "leave_balance": 20
+    },
+    {
+      "employee_id": "EMP004",
+      "name": "Kabir Khan",
+      "email": "kabir.khan@example.com",
+      "department": "Sales",
+      "role": "Account Executive",
+      "leave_balance": 8
+    },
+    {
+      "employee_id": "EMP005",
+      "name": "Neha Rao",
+      "email": "neha.rao@example.com",
+      "department": "Finance",
+      "role": "Finance Analyst",
+      "leave_balance": 15
+    },
+    {
+      "employee_id": "EMP006",
+      "name": "Vikram Iyer",
+      "email": "vikram.iyer@example.com",
+      "department": "Engineering",
+      "role": "DevOps Engineer",
+      "leave_balance": 22
+    }
+  ]
