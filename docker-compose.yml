@@ -1,0 +1,24 @@
+services:
+  hr-mcp-server:
+    build: .
+    container_name: hr-leave-mcp
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      HR_DB_PATH: /app/data/hr_leave.db
+      SEED_FILE_PATH: /app/data/seed_employees.json
+      MCP_LOG_LEVEL: INFO
+    volumes:
+      - hr_leave_data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health').read()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  hr_leave_data:
