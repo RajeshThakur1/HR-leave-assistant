@@ -35,3 +35,21 @@ cp .env.sample .env
 
 
 pip install -r requirements.txt
+
+
+If using Docker, restart the container after editing `.env`:
+
+```bash
+docker compose down
+docker compose up --build
+```
+
+
+
+### `Connection refused` or `Could not connect`
+
+The server is not running or the port is different. Verify:
+
+```bash
+curl http://localhost:8000/health
+```
