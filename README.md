@@ -23,3 +23,10 @@ Conda alternative:
 conda create -n mcp-llm-connect python=3.11 -y
 conda activate mcp-llm-connect
 ```
+
+
+### 3. Configure environment variables
+
+```bash
+cp .env.sample .env
+```
