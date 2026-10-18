@@ -30,3 +30,8 @@ conda activate mcp-llm-connect
 ```bash
 cp .env.sample .env
 ```
+
+### 4. Install requirements.txt
+
+
+pip install -r requirements.txt
