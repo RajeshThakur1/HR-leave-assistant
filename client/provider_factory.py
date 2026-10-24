@@ -4,6 +4,7 @@ from __future__ import annotations
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
 class  MissingApiKeyError(RuntimeError):
     """Raised when an API key is missing."""
 
@@ -50,7 +51,7 @@ def get_mcp_client_config() -> dict:
         MultiServerMCPClient configuration dictionary.
     """
     server_url = os.getenv("MCP_SERVER_URL", "http://localhost:8000/mcp")
-    token = os.getenv("MCP_SERVER_TOKEN", None).strip()
+    token = os.getenv("MCP_AUTH_TOKEN", None).strip()
     headers = {"Authorization": f"Bearer {token}"} if token else {}
 
     return {
