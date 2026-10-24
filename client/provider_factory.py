@@ -40,6 +40,28 @@ def get_model_identifier() -> str:
     raise ValueError("MODEL_PROVIDER must be one of: openai, anthropic, google.")
 
 
+def get_mcp_client_config() -> dict:
+    """Build the MultiServerMCPClient config for the HR server.
+
+    Params:
+        None
+
+    Returns:
+        MultiServerMCPClient configuration dictionary.
+    """
+    server_url = os.getenv("MCP_SERVER_URL", "http://localhost:8000/mcp")
+    token = os.getenv("MCP_SERVER_TOKEN", None).strip()
+    headers = {"Authorization": f"Bearer {token}"} if token else {}
+
+    return {
+        "hr_leave": {
+            "transport": "http",
+            "url": server_url,
+            "headers": headers
+        }
+    }
+
+
         
 
 
