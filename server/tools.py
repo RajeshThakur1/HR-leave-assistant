@@ -8,6 +8,8 @@ from __future__ import annotations
 import logging
 import time
 from typing import Literal
+
+from langchain_core import messages
 from server import db
 
 from server.models import ToolResponse
@@ -31,7 +33,8 @@ def _safe_tool_call(tool_name: str, operation):
         result = operation()
         duration_ms = round((time.perf_counter() - started_at) *1000,2)
         LOGGER.info("tool=%s success=true duration_ms=%s", tool_name, duration_ms)
-        return ToolResponse(success=True, result=result)
+        print(f"Result for testing {result}")
+        return ToolResponse(success=True, message=f"{tool_name} completed", data = result)
     except ValueError as exct:
         duration_ms = round((time.perf_counter() - started_at) * 1000, 2)
         LOGGER.exception("tool=%s success=false duration_ms=%s", tool_name, duration_ms)
