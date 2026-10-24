@@ -53,3 +53,18 @@ The server is not running or the port is different. Verify:
 ```bash
 curl http://localhost:8000/health
 ```
+
+
+Push the Docker image in DockerHub
+
+Docker loging
+
+>>> docker login
+
+Create a TAG
+
+>>> docker tag containerising_mcp_llm_connect-hr-mcp-server:latest:latest rajeshthakur1/containerising_mcp_llm_connect-hr-mcp-server:latest
+
+Push the image in Docker Hub
+
+>>> docker push rajeshthakur1/containerising_mcp_llm_connect-hr-mcp-server:latest
